@@ -1,0 +1,13 @@
+query PokemonsQuery($i : Int!) {
+    pokemons(first : $i){
+        ...PokemonFragment
+    }
+}
+
+fragment PokemonFragment on Pokemon{
+    number
+    name
+    types
+    image
+    maxCP
+}

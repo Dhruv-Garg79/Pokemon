@@ -1,0 +1,38 @@
+query PokemonDetailQuery($name: String = "bulbasaur") {
+    detail :pokemon(name: $name) {
+        ...PokemonDetailFragment
+    }
+    evolution :pokemon(name: $name){
+        evolutions{
+            name
+        }
+    }
+}
+
+fragment PokemonDetailFragment on Pokemon {
+    id
+    number
+    name
+    types
+    maxCP
+    weight {
+        maximum
+    }
+    height {
+        maximum
+    }
+    classification
+    image
+    attacks {
+        special {
+            name
+            type
+            damage
+        }
+        fast {
+            name
+            type
+            damage
+        }
+    }
+}

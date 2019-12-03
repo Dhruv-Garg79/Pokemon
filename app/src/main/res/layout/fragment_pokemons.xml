@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="utf-8"?>
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+             xmlns:tools="http://schemas.android.com/tools"
+             android:layout_width="match_parent"
+             android:layout_height="match_parent"
+             xmlns:app="http://schemas.android.com/apk/res-auto"
+             tools:context=".Pokemons.PokemonsFragment">
+
+    <com.airbnb.lottie.LottieAnimationView
+            android:id="@+id/pokemonsLoading"
+            android:layout_gravity="center"
+            app:lottie_rawRes="@raw/pokeball_anim"
+            app:lottie_loop="true"
+            android:layout_width="100dp"
+            android:layout_height="100dp"/>
+
+    <androidx.recyclerview.widget.RecyclerView
+            android:id="@+id/pokemonsRecyclerView"
+            app:layoutManager="androidx.recyclerview.widget.GridLayoutManager"
+            app:spanCount="1"
+            tools:listitem="@layout/item_pokemon"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+
+    </androidx.recyclerview.widget.RecyclerView>
+
+    <com.google.android.material.chip.Chip
+            android:id="@+id/chip"
+            android:text="CHOICE"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="bottom|center_horizontal"
+            android:layout_marginBottom="16dp"
+            app:chipIcon="@drawable/pokeball1"
+            app:checkedIcon="@drawable/pokeball"
+            android:checkable="true"
+            app:chipBackgroundColor="#FFFFFF"
+            style="@style/Widget.MaterialComponents.Chip.Action"/>
+
+</FrameLayout>
